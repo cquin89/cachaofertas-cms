@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" fill="none">
+  <!-- Check grande -->
+  <circle cx="100" cy="75" r="45" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <path d="M78 75 L93 90 L122 62" stroke="#22C55E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Confeti naranja -->
+  <rect x="50" y="30" width="6" height="6" rx="1" fill="#F97316" opacity="0.6" transform="rotate(15 53 33)"/>
+  <rect x="145" y="40" width="5" height="5" rx="1" fill="#FB923C" opacity="0.5" transform="rotate(-20 147 42)"/>
+  <circle cx="60" cy="110" r="4" fill="#FDBA74" opacity="0.7"/>
+  <circle cx="145" cy="105" r="3" fill="#F97316" opacity="0.5"/>
+  <!-- Texto -->
+  <rect x="60" y="132" width="80" height="8" rx="4" fill="#DCFCE7"/>
+</svg>

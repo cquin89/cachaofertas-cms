@@ -1,0 +1,143 @@
+/* ══════════════════════════════════════════════════════════
+   ANIMACIONES — CachaOfertas CMS
+   Keyframes adicionales y utilidades de animación
+   ══════════════════════════════════════════════════════════ */
+
+/* ══════ KEYFRAMES ══════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Temperatura HOT: glow rojo pulsante */
+@keyframes pulseHot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+
+/* Skeleton loader shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* Notificación pendiente: pulso naranja */
+@keyframes pulseOrange {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(249, 115, 22, 0); }
+}
+
+/* Entrada de toast */
+@keyframes toastSlideIn {
+  from { opacity: 0; transform: translateY(100%) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Spinner de carga */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Scale bounce para confirmaciones */
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.85); }
+  60%  { opacity: 1; transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ══════ UTILIDADES DE ANIMACIÓN ══════ */
+
+.animate-fade-in     { animation: fadeIn     0.3s ease-out both; }
+.animate-fade-out    { animation: fadeOut    0.2s ease-in  both; }
+.animate-slide-up    { animation: slideUp    0.3s ease-out both; }
+.animate-slide-down  { animation: slideDown  0.3s ease-out both; }
+.animate-slide-right { animation: slideRight 0.25s ease-out both; }
+.animate-slide-left  { animation: slideLeft  0.25s ease-out both; }
+.animate-pulse-hot   { animation: pulseHot   2s infinite; }
+.animate-pulse-orange{ animation: pulseOrange 2s infinite; }
+.animate-bounce-in   { animation: bounceIn   0.4s var(--transition-spring) both; }
+.animate-spin        { animation: spin       1s linear infinite; }
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 25%,
+    var(--color-neutral-150) 50%,
+    var(--color-neutral-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+[data-theme="dark"] .shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-800) 25%,
+    var(--color-neutral-700) 50%,
+    var(--color-neutral-800) 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* Delays para animaciones escalonadas */
+.delay-75   { animation-delay: 75ms;  }
+.delay-100  { animation-delay: 100ms; }
+.delay-150  { animation-delay: 150ms; }
+.delay-200  { animation-delay: 200ms; }
+.delay-300  { animation-delay: 300ms; }
+.delay-500  { animation-delay: 500ms; }
+
+/* Durations adicionales */
+.duration-fast   { animation-duration: 150ms; }
+.duration-normal { animation-duration: 250ms; }
+.duration-slow   { animation-duration: 350ms; }
+
+/* ══════ PAGE TRANSITIONS (Framer Motion helpers) ══════ */
+/* Variantes usadas en AnimatePresence — solo referencias de clase */
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
